@@ -1,0 +1,30 @@
+<script>
+var minAuthor = 4;
+var maxAuthor = 15;
+var minBook = 1;
+var maxBook = 23;
+var sql = "INSERT INTO AUTHOR_BOOK (ID_AUTHOR, ID_BOOK)\r\n";
+var singleRowSql = "SELECT [#ID_AUTHOR#], [#ID_BOOK#] FROM RDB$DATABASE"
+var endOfLine = " UNION ALL\r\n";
+var endOfAll = ";"
+var count = 50;
+for (var i = 0; i < count; i++) {
+	var currentRow = singleRowSql;
+	currentRow = currentRow.replace("[#ID_AUTHOR#]", getRandomId(minAuthor, maxAuthor));
+	currentRow = currentRow.replace("[#ID_BOOK#]", getRandomId(minBook, maxBook, 20));
+	if (i < count - 1) {
+		currentRow += endOfLine;
+	}
+	sql += currentRow;
+}
+sql += endOfAll;
+console.log(sql);
+
+function getRandomId(min, max, except) {
+	var result = Math.floor(Math.random() * (max - min + 1)) + min;
+	if (result == except) {
+		result = getRandomId(min, max, except);
+	}
+	return result;
+}
+</script>
