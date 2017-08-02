@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.ChessBoardNotationTest" tests="1" failures="0" errors="0" timestamp="2017-08-02T17:43:53" hostname="ultroizmuroma" time="0.024">
+<testsuite name="test.java.ChessBoardNotationTest" tests="1" failures="0" errors="0" timestamp="2017-08-02T19:51:33" hostname="ultroizmuroma" time="0.016">
   <properties/>
-  <testcase name="getNotaion" classname="test.java.ChessBoardNotationTest" time="0.024"/>
+  <testcase name="getNotaion" classname="test.java.ChessBoardNotationTest" time="0.016"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
