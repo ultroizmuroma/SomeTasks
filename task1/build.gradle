@@ -1,0 +1,46 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'main.java.chess.Main'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+task compile {
+    doLast {
+        println 'compiling source'
+    }
+}
+
+task compileTest(dependsOn: compile) {
+    doLast {
+        println 'compiling unit tests'
+    }
+}
+
+jar {
+    baseName = 'task1'
+    version =  '1.0'
+}
+
+
+dependencies {
+    testCompile "junit:junit:4.11"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+test {
+    testLogging {
+        // Show that tests are run in the command-line output
+        events 'started', 'passed'
+    }
+}
+
+run {
+    standardInput = System.in
+}
